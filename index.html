@@ -1,0 +1,2048 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artha AI | AI Adoption for India's SMEs</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #FF6B00;
+            --primary-hover: #e66000;
+            --secondary: #FFB347;
+            --accent: #00C2A8;
+            --bg-white: #FFFFFF;
+            --bg-warm: #FFF8F3;
+            --bg-stats: #FFF4EC;
+            --text-main: #1A1A1A;
+            --text-muted: #6c757d;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-main);
+            background-color: var(--bg-warm);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Navbar */
+        .navbar {
+            transition: all 0.3s ease-in-out;
+            padding: 15px 0;
+            background-color: rgba(255, 255, 255, 0.98);
+        }
+        .navbar.scrolled {
+            padding: 8px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-main) !important;
+            margin: 0 10px;
+            transition: color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary) !important;
+        }
+        .btn-primary-custom {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 10px 24px;
+            transition: all 0.3s;
+        }
+        .btn-primary-custom:hover {
+            background-color: var(--primary-hover);
+            border-color: var(--primary-hover);
+            color: white;
+            transform: translateY(-2px);
+        }
+        .btn-outline-custom {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-weight: 600;
+            border-radius: 8px;
+            padding: 8px 24px;
+            transition: all 0.3s;
+            background: transparent;
+        }
+        .btn-outline-custom:hover {
+            background-color: rgba(255, 107, 0, 0.1);
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 140px 0 80px;
+            background-color: var(--bg-white);
+        }
+        .hero-badge {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 16px;
+            font-weight: 500;
+            background-color: rgba(255, 107, 0, 0.05);
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .hero-title {
+            font-size: clamp(36px, 4vw, 58px);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .floating-tags .badge {
+            background: white;
+            color: var(--text-main);
+            border: 1px solid #eee;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            font-weight: 500;
+            padding: 8px 16px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            border-radius: 50rem;
+            animation: bob 3s infinite ease-in-out alternate;
+        }
+        .floating-tags .badge:nth-child(2) { animation-delay: 0.5s; }
+        .floating-tags .badge:nth-child(3) { animation-delay: 1s; }
+        .floating-tags .badge:nth-child(4) { animation-delay: 1.5s; }
+
+        @keyframes bob {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-8px); }
+        }
+
+        /* Avatar & Video Card */
+        .avatar-container {
+            position: relative;
+            display: inline-block;
+            animation: glowPulse 3s infinite alternate;
+            border-radius: 50%;
+        }
+        @keyframes glowPulse {
+            0% { box-shadow: 0 0 10px rgba(255, 107, 0, 0.2); }
+            100% { box-shadow: 0 0 30px rgba(255, 107, 0, 0.6); }
+        }
+        .founder-name-card {
+            background: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            margin-top: -20px;
+            position: relative;
+            z-index: 10;
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .video-card {
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            max-width: 300px;
+            margin: 20px auto 0;
+        }
+        .video-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+        }
+        .play-circle {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 14px;
+            padding-left: 3px;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background-color: var(--bg-stats);
+            padding: 60px 0;
+        }
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Poppins', sans-serif;
+            margin-bottom: 0;
+        }
+
+        /* Services Section */
+        .service-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05) !important;
+        }
+        .service-icon-wrapper {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 107, 0, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .service-link {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .service-link:hover {
+            color: var(--primary-hover);
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            padding: 80px 0;
+            color: white;
+        }
+        
+        /* Industries */
+        .industry-card {
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+        .industry-card:hover {
+            background-color: var(--primary) !important;
+            color: white !important;
+            transform: translateY(-5px);
+        }
+        .industry-emoji {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials */
+        .carousel-indicators [data-bs-target] {
+            background-color: var(--primary);
+        }
+        .star-rating {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #1A1A1A;
+            color: white;
+        }
+        .social-icon {
+            width: 35px;
+            height: 35px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            transition: all 0.3s;
+        }
+        .social-icon:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        .footer-link {
+            color: #aaa;
+            transition: color 0.3s;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        .footer-link:hover {
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <svg width="35" height="35" viewBox="0 0 100 100" class="me-2">
+                    <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="#FF6B00"/>
+                    <text x="50" y="68" font-family="Poppins" font-size="50" font-weight="bold" fill="white" text-anchor="middle">A</text>
+                </svg>
+                <span class="font-poppins fw-bold" style="color: var(--primary); font-size: 24px;">Artha AI</span>
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#industries">Industries</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#diagnostic">AI Diagnostic</a></li>
+                </ul>
+                <div class="d-flex mt-3 mt-lg-0">
+                    <a href="#diagnostic" class="btn btn-primary-custom">Take Free AI Test</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                    <span class="rounded-pill hero-badge">AI Adoption for India's Professionals & SMEs</span>
+                    <h1 class="hero-title font-poppins fw-bold">
+                        Helping Professionals & <br> Small Businesses Enter <br>
+                        <span class="text-gradient">the AI Age</span>
+                    </h1>
+                    <p class="lead text-muted mb-4">AI Websites • Automation • Chatbots • Digital Growth</p>
+                    
+                    <div class="d-flex flex-wrap gap-3 mb-4">
+                        <a href="#diagnostic" class="btn btn-primary-custom">Take Free AI Diagnostic Test &rarr;</a>
+                        <button class="btn btn-outline-custom d-flex align-items-center gap-2" data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <i class="fa-solid fa-play"></i> Watch Intro Video
+                        </button>
+                    </div>
+
+                    <div class="floating-tags mt-4">
+                        <span class="badge">🤖 AI Chatbots</span>
+                        <span class="badge">⚡ Automation</span>
+                        <span class="badge">📊 Lead Gen</span>
+                        <span class="badge">🌐 AI Websites</span>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 text-center" data-aos="fade-left">
+                    <div class="avatar-container mb-2">
+                        <svg viewBox="0 0 200 200" width="220" height="220">
+                            <circle cx="100" cy="100" r="98" fill="url(#avatarGrad)" stroke="#FF6B00" stroke-width="3"/>
+                            <defs>
+                                <radialGradient id="avatarGrad" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#FFB347"/>
+                                    <stop offset="100%" stop-color="#FF6B00"/>
+                                </radialGradient>
+                                <pattern id="circuit" width="30" height="30" patternUnits="userSpaceOnUse">
+                                    <path d="M10 0 L10 10 L20 10" stroke="rgba(255,255,255,0.15)" stroke-width="1" fill="none"/>
+                                    <circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.2)"/>
+                                </pattern>
+                            </defs>
+                            <circle cx="100" cy="100" r="97" fill="url(#circuit)"/>
+                            <ellipse cx="100" cy="155" rx="55" ry="40" fill="#1A1A1A"/>
+                            <path d="M78 138 Q100 148 122 138 L118 125 Q100 135 82 125 Z" fill="white"/>
+                            <path d="M97 135 L100 155 L103 135 L100 128 Z" fill="#FF6B00"/>
+                            <rect x="92" y="118" width="16" height="14" rx="4" fill="#FDBCAA"/>
+                            <ellipse cx="100" cy="98" rx="32" ry="36" fill="#FDBCAA"/>
+                            <ellipse cx="100" cy="68" rx="33" ry="18" fill="#2C1810"/>
+                            <ellipse cx="100" cy="74" rx="28" ry="14" fill="#2C1810"/>
+                            <ellipse cx="68" cy="100" rx="7" ry="9" fill="#FDBCAA"/>
+                            <ellipse cx="132" cy="100" rx="7" ry="9" fill="#FDBCAA"/>
+                            <ellipse cx="88" cy="97" rx="5" ry="6" fill="white"/>
+                            <ellipse cx="112" cy="97" rx="5" ry="6" fill="white"/>
+                            <circle cx="89" cy="98" r="3" fill="#2C1810"/>
+                            <circle cx="113" cy="98" r="3" fill="#2C1810"/>
+                            <circle cx="90" cy="97" r="1" fill="white"/>
+                            <circle cx="114" cy="97" r="1" fill="white"/>
+                            <path d="M83 90 Q88 87 93 90" stroke="#2C1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <path d="M107 90 Q112 87 117 90" stroke="#2C1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <path d="M98 103 Q100 108 102 103" stroke="#D4967A" stroke-width="1.5" fill="none"/>
+                            <path d="M90 112 Q100 119 110 112" stroke="#D4967A" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <rect x="86" y="148" width="28" height="14" rx="4" fill="#FF6B00"/>
+                            <text x="100" y="158" text-anchor="middle" font-size="7" fill="white" font-family="Arial" font-weight="bold">AI</text>
+                        </svg>
+                    </div>
+                    <div class="d-block">
+                        <div class="founder-name-card">
+                            <span style="color: var(--primary);">Ashutosh Khadria</span> <span class="text-muted fw-normal">| Founder, Artha AI</span>
+                        </div>
+                    </div>
+
+                    <div class="card video-card rounded-3 shadow-sm p-2 d-flex flex-row align-items-center" data-bs-toggle="modal" data-bs-target="#videoModal">
+                        <div class="play-circle flex-shrink-0">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+                        <div class="ms-3 text-start">
+                            <h6 class="font-poppins fw-bold mb-0 text-dark" style="font-size: 14px;">Meet Ashutosh</h6>
+                            <small class="text-muted" style="font-size: 12px;">Founder's Message (2:30)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="row text-center gy-4">
+                <div class="col-6 col-md-3">
+                    <p class="stat-number"><span class="counter" data-target="500">0</span>+</p>
+                    <p class="text-muted mb-0 fw-medium">Businesses Helped</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <p class="stat-number"><span class="counter" data-target="7">0</span>+</p>
+                    <p class="text-muted mb-0 fw-medium">AI Services Offered</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <p class="stat-number"><span class="counter" data-target="98">0</span>%</p>
+                    <p class="text-muted mb-0 fw-medium">Client Satisfaction</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <p class="stat-number"><span class="counter" data-target="3">0</span>+</p>
+                    <p class="text-muted mb-0 fw-medium">Years of AI Expertise</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="fw-bold" style="color: var(--primary); letter-spacing: 1px; font-size: 14px;">OUR SERVICES</span>
+                <h2 class="font-poppins fw-bold mt-2">Simple, Practical AI Solutions for Your Business</h2>
+                <p class="text-muted">Artha AI helps SMEs adopt AI through simple, practical solutions.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="50">
+                    <div class="card service-card h-100 border-0 shadow-sm p-4 rounded-3">
+                        <div class="service-icon-wrapper"><i class="fa-solid fa-globe"></i></div>
+                        <h4 class="font-poppins fw-bold fs-5">AI Ready Websites</h4>
+                        <p class="text-muted fs-6 mb-4">Modern AI-optimized websites for current and new businesses.</p>
+                        <a href="services/ai-websites.html" class="mt-auto service-link">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card service-card h-100 border-0 shadow-sm p-4 rounded-3">
+                        <div class="service-icon-wrapper"><i class="fa-brands fa-whatsapp"></i></div>
+                        <h4 class="font-poppins fw-bold fs-5">WhatsApp Integration</h4>
+                        <p class="text-muted fs-6 mb-4">Connect AI chatbots to WhatsApp for instant customer engagement.</p>
+                        <a href="services/whatsapp.html" class="mt-auto service-link">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="150">
+                    <div class="card service-card h-100 border-0 shadow-sm p-4 rounded-3">
+                        <div class="service-icon-wrapper"><i class="fa-solid fa-chart-line"></i></div>
+                        <h4 class="font-poppins fw-bold fs-5">Lead Generation & Automation</h4>
+                        <p class="text-muted fs-6 mb-4">Automated lead capture and nurturing pipelines for your business.</p>
+                        <a href="services/lead-gen.html" class="mt-auto service-link">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card service-card h-100 border-0 shadow-sm p-4 rounded-3">
+                        <div class="service-icon-wrapper"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <h4 class="font-poppins fw-bold fs-5">Digital Directories Listing</h4>
+                        <p class="text-muted fs-6 mb-4">Get found on Google, Justdial, IndiaMART and top directories.</p>
+                        <a href="services/directories.html" class="mt-auto service-link">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="250">
+                    <div class="card service-card h-100 border-0 shadow-sm p-4 rounded-3">
+                        <div class="service-icon-wrapper"><i class="fa-solid fa-bullhorn"></i></div>
+                        <h4 class="font-poppins fw-bold fs-5">Automate Digital Marketing</h4>
+                        <p class="text-muted fs-6 mb-4">AI-powered social media, email, and ad campaign automation.</p>
+                        <a href="services/digital-marketing.html" class="mt-auto service-link">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card service-card h-100 border-0 shadow-sm p-4 rounded-3">
+                        <div class="service-icon-wrapper"><i class="fa-solid fa-comments"></i></div>
+                        <h4 class="font-poppins fw-bold fs-5">Digital Communication Automation</h4>
+                        <p class="text-muted fs-6 mb-4">Automate WhatsApp, email, and SMS communications at scale.</p>
+                        <a href="services/communication.html" class="mt-auto service-link">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="350">
+                    <div class="card service-card h-100 border-0 shadow-sm p-4 rounded-3">
+                        <div class="service-icon-wrapper"><i class="fa-solid fa-brain"></i></div>
+                        <h4 class="font-poppins fw-bold fs-5">AI Consulting</h4>
+                        <p class="text-muted fs-6 mb-4">Strategic AI roadmap and consulting tailored for your SME.</p>
+                        <a href="services/consulting.html" class="mt-auto service-link">Learn More &rarr;</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card service-card h-100 border-0 shadow-sm p-4 rounded-3">
+                        <div class="service-icon-wrapper"><i class="fa-solid fa-cogs"></i></div>
+                        <h4 class="font-poppins fw-bold fs-5">Business Process Automation</h4>
+                        <p class="text-muted fs-6 mb-4">Streamline operations with intelligent workflow automation.</p>
+                        <a href="services/process-automation.html" class="mt-auto service-link">Learn More &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="diagnostic" class="cta-banner text-center" data-aos="fade-up">
+        <div class="container">
+            <h2 class="font-poppins fw-bold mb-3">How AI Ready Are You?</h2>
+            <p class="fs-5 mb-4 opacity-75">Take our free 20-question test and discover your AI Maturity Score instantly.</p>
+            <a href="#" class="btn btn-light btn-lg fw-bold px-4 py-3 shadow" style="color: var(--primary); border-radius: 10px;">
+                Take Free Diagnostic Test &rarr;
+            </a>
+            <p class="mt-3 small opacity-75 mb-0 fw-medium">✅ Free | ⏱️ 2 Minutes | 🔒 No Spam</p>
+        </div>
+    </section>
+
+    <section id="industries" class="py-5" style="background-color: var(--bg-warm);">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <span class="fw-bold" style="color: var(--primary); letter-spacing: 1px; font-size: 14px;">INDUSTRIES</span>
+                <h2 class="font-poppins fw-bold mt-2">Built for India's Growing Professionals</h2>
+            </div>
+            
+            <div class="row g-3">
+                <script>
+                    const industries = [
+                        { icon: "🧾", name: "Chartered Accountants" }, { icon: "⚖️", name: "Lawyers & Legal Firms" },
+                        { icon: "🏛️", name: "Architects" }, { icon: "🏠", name: "Real Estate Consultants" },
+                        { icon: "💰", name: "Insurance Agents" }, { icon: "📊", name: "Portfolio Managers" },
+                        { icon: "🚀", name: "Solopreneurs" }, { icon: "🏥", name: "Healthcare Clinics" },
+                        { icon: "🎓", name: "Education & Coaching" }, { icon: "🚗", name: "Driving Schools" },
+                        { icon: "🧒", name: "Playschools" }, { icon: "🏢", name: "SMEs & Small Businesses" }
+                    ];
+                    industries.forEach((ind, index) => {
+                        let delay = (index % 4) * 50;
+                        document.write(`
+                            <div class="col-6 col-md-4 col-lg-3" data-aos="fade-up" data-aos-delay="${delay}">
+                                <div class="card industry-card bg-white border-0 shadow-sm text-center p-3 rounded-3 h-100">
+                                    <div class="industry-emoji">${ind.icon}</div>
+                                    <h6 class="font-poppins fw-bold mb-0">${ind.name}</h6>
+                                </div>
+                            </div>
+                        `);
+                    });
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-6 ps-lg-5 mb-5 mb-lg-0" data-aos="fade-left">
+                    <span class="fw-bold" style="color: var(--primary); letter-spacing: 1px; font-size: 14px;">MEET OUR FOUNDER</span>
+                    <h2 class="font-poppins fw-bold mt-2 mb-4">Hi, I'm Ashutosh Khadria</h2>
+                    <p class="text-muted mb-4 fs-6 lh-lg">
+                        I'm an Entrepreneur and AI adoption advocate. My mission is to make AI accessible and practical for every small business owner and professional in India. We help SMEs adopt AI tools to automate workflows, improve digital presence, and grow faster.
+                    </p>
+                    <ul class="list-unstyled mb-4 text-muted">
+                        <li class="mb-2"><i class="fa-solid fa-circle-check me-2" style="color: var(--accent);"></i> Entrepreneur & AI Adoption Advocate</li>
+                        <li class="mb-2"><i class="fa-solid fa-circle-check me-2" style="color: var(--accent);"></i> Making AI Accessible for Small Businesses</li>
+                        <li class="mb-2"><i class="fa-solid fa-circle-check me-2" style="color: var(--accent);"></i> Helping SMEs Adopt AI Practically</li>
+                    </ul>
+                    <a href="#" class="btn btn-outline-warning text-dark fw-bold border-2" style="border-color: var(--secondary);">Read Full Story &rarr;</a>
+                </div>
+                
+                <div class="col-lg-6 text-center" data-aos="fade-right">
+                    <div class="avatar-container mb-3" style="transform: scale(1.1);">
+                        <svg viewBox="0 0 200 200" width="220" height="220">
+                            <circle cx="100" cy="100" r="98" fill="url(#avatarGrad2)" stroke="#FF6B00" stroke-width="3"/>
+                            <defs>
+                                <radialGradient id="avatarGrad2" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#FFB347"/>
+                                    <stop offset="100%" stop-color="#FF6B00"/>
+                                </radialGradient>
+                                <pattern id="circuit2" width="30" height="30" patternUnits="userSpaceOnUse">
+                                    <path d="M10 0 L10 10 L20 10" stroke="rgba(255,255,255,0.15)" stroke-width="1" fill="none"/>
+                                    <circle cx="10" cy="10" r="2" fill="rgba(255,255,255,0.2)"/>
+                                </pattern>
+                            </defs>
+                            <circle cx="100" cy="100" r="97" fill="url(#circuit2)"/>
+                            <ellipse cx="100" cy="155" rx="55" ry="40" fill="#1A1A1A"/>
+                            <path d="M78 138 Q100 148 122 138 L118 125 Q100 135 82 125 Z" fill="white"/>
+                            <path d="M97 135 L100 155 L103 135 L100 128 Z" fill="#FF6B00"/>
+                            <rect x="92" y="118" width="16" height="14" rx="4" fill="#FDBCAA"/>
+                            <ellipse cx="100" cy="98" rx="32" ry="36" fill="#FDBCAA"/>
+                            <ellipse cx="100" cy="68" rx="33" ry="18" fill="#2C1810"/>
+                            <ellipse cx="100" cy="74" rx="28" ry="14" fill="#2C1810"/>
+                            <ellipse cx="68" cy="100" rx="7" ry="9" fill="#FDBCAA"/>
+                            <ellipse cx="132" cy="100" rx="7" ry="9" fill="#FDBCAA"/>
+                            <ellipse cx="88" cy="97" rx="5" ry="6" fill="white"/>
+                            <ellipse cx="112" cy="97" rx="5" ry="6" fill="white"/>
+                            <circle cx="89" cy="98" r="3" fill="#2C1810"/>
+                            <circle cx="113" cy="98" r="3" fill="#2C1810"/>
+                            <circle cx="90" cy="97" r="1" fill="white"/>
+                            <circle cx="114" cy="97" r="1" fill="white"/>
+                            <path d="M83 90 Q88 87 93 90" stroke="#2C1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <path d="M107 90 Q112 87 117 90" stroke="#2C1810" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <path d="M98 103 Q100 108 102 103" stroke="#D4967A" stroke-width="1.5" fill="none"/>
+                            <path d="M90 112 Q100 119 110 112" stroke="#D4967A" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <rect x="86" y="148" width="28" height="14" rx="4" fill="#FF6B00"/>
+                            <text x="100" y="158" text-anchor="middle" font-size="7" fill="white" font-family="Arial" font-weight="bold">AI</text>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-stats" style="background-color: var(--bg-stats);">
+        <div class="container py-5">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="font-poppins fw-bold">What Our Clients Say</h2>
+            </div>
+
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up" data-aos-delay="100">
+                <div class="carousel-indicators mb-0" style="bottom: -40px;">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                
+                <div class="carousel-inner pb-4">
+                    <div class="carousel-item active">
+                        <div class="col-md-8 mx-auto">
+                            <div class="card border-0 shadow-sm p-4 rounded-3 text-center">
+                                <div class="star-rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="fs-5 font-poppins fst-italic mb-4">"Artha AI transformed how we handle client inquiries. The automation saves us hours every single day."</p>
+                                <h6 class="fw-bold mb-0">CA Ramesh</h6>
+                                <small class="text-muted">Chartered Accountant, Mumbai</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-8 mx-auto">
+                            <div class="card border-0 shadow-sm p-4 rounded-3 text-center">
+                                <div class="star-rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="fs-5 font-poppins fst-italic mb-4">"Our website now generates leads on autopilot. It is exactly what our firm needed to modernize."</p>
+                                <h6 class="fw-bold mb-0">Advocate Priya</h6>
+                                <small class="text-muted">Legal Firm, Pune</small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="col-md-8 mx-auto">
+                            <div class="card border-0 shadow-sm p-4 rounded-3 text-center">
+                                <div class="star-rating">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                                <p class="fs-5 font-poppins fst-italic mb-4">"Best investment for our clinic's digital presence. The WhatsApp bot handles appointments seamlessly."</p>
+                                <h6 class="fw-bold mb-0">Dr. Mehta</h6>
+                                <small class="text-muted">Healthcare Clinic, Bengaluru</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer pt-5 mt-auto">
+        <div class="container pt-4">
+            <div class="row g-4 mb-5">
+                <div class="col-12 col-md-6 col-lg-3">
+                    <div class="d-flex align-items-center mb-3">
+                        <svg width="24" height="24" viewBox="0 0 100 100" class="me-2">
+                            <polygon points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5" fill="#FF6B00"/>
+                            <text x="50" y="68" font-family="Poppins" font-size="50" font-weight="bold" fill="white" text-anchor="middle">A</text>
+                        </svg>
+                        <span class="font-poppins fw-bold" style="color: var(--primary); font-size: 20px;">Artha AI</span>
+                    </div>
+                    <p class="text-muted" style="font-size: 14px;">Making AI Accessible for India's SMEs and Professionals.</p>
+                    <div class="d-flex mt-3">
+                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="font-poppins fw-bold mb-3 text-white">Quick Links</h5>
+                    <div class="nav flex-column">
+                        <a href="#" class="footer-link">Home</a>
+                        <a href="#about" class="footer-link">About Us</a>
+                        <a href="#services" class="footer-link">Services</a>
+                        <a href="#industries" class="footer-link">Industries</a>
+                        <a href="#diagnostic" class="footer-link">AI Diagnostic (Free)</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="font-poppins fw-bold mb-3 text-white">Services</h5>
+                    <div class="nav flex-column">
+                        <a href="#" class="footer-link">AI Ready Websites</a>
+                        <a href="#" class="footer-link">Lead Generation</a>
+                        <a href="#" class="footer-link">Digital Directories</a>
+                        <a href="#" class="footer-link">Automate Marketing</a>
+                        <a href="#" class="footer-link">WhatsApp Integration</a>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h5 class="font-poppins fw-bold mb-3 text-white">Contact</h5>
+                    <p class="text-muted mb-2"><i class="fa-solid fa-phone me-2"></i> +91 98765 43210</p>
+                    <p class="text-muted mb-2"><i class="fa-solid fa-envelope me-2"></i> hello@artha-ai.com</p>
+                    <p class="text-muted mb-3"><i class="fa-solid fa-location-dot me-2"></i> Bengaluru, Karnataka, India</p>
+                    <a href="#" class="btn btn-primary-custom btn-sm w-100">Book Free Consultation</a>
+                </div>
+            </div>
+
+            <div class="border-top border-secondary pt-3 pb-3 text-center text-md-start d-md-flex justify-content-between align-items-center">
+                <p class="text-muted small mb-2 mb-md-0">&copy; 2025 Artha AI. All Rights Reserved.</p>
+                <div class="text-muted small mb-2 mb-md-0">
+                    <a href="#" class="text-muted me-3">Privacy Policy</a>
+                    <a href="#" class="text-muted me-3">Terms</a>
+                    <a href="#" class="text-muted">Sitemap</a>
+                </div>
+                <p class="text-muted small mb-0">Made with ❤️ in India</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content bg-dark">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <video id="introVideo" width="100%" controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support HTML video.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        // 1. Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // 2. Navbar Shrink on Scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // 3. Counter Animation (IntersectionObserver)
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200; // Lower is faster
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target;
+                    
+                    const updateCount = () => {
+                        const target = +counter.getAttribute('data-target');
+                        const count = +counter.innerText;
+                        const inc = target / speed;
+
+                        if (count < target) {
+                            counter.innerText = Math.ceil(count + inc);
+                            setTimeout(updateCount, 15);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+
+                    updateCount();
+                    observer.unobserve(counter);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(counter => {
+            counterObserver.observe(counter);
+        });
+
+        // 4. Video Modal Handling (Pause video on close)
+        const videoModal = document.getElementById('videoModal');
+        const video = document.getElementById('introVideo');
+        
+        videoModal.addEventListener('hidden.bs.modal', function () {
+            video.pause();
+        });
+        videoModal.addEventListener('shown.bs.modal', function () {
+            video.play();
+        });
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="Artha AI helps small businesses and professionals adopt AI tools to automate workflows, improve digital presence, and grow faster.">
+  <title>Artha AI | AI Adoption for India's SMEs & Professionals</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+  /* === GLOBAL RESET === */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { 
+    overflow-x: hidden; 
+    width: 100%; 
+    max-width: 100%;
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #1A1A1A;
+  }
+  h1, h2, h3, h4, h5, h6 { font-family: 'Poppins', sans-serif; }
+  img, svg, video, canvas { max-width: 100%; height: auto; }
+  section { width: 100%; overflow: hidden; }
+  div { max-width: 100%; }
+
+  /* === CSS VARIABLES === */
+  :root {
+    --orange: #FF6B00;
+    --amber: #FFB347;
+    --teal: #00C2A8;
+    --bg-cream: #FFF8F3;
+    --bg-peach: #FFF4EC;
+    --text-dark: #1A1A1A;
+    --text-mid: #555555;
+    --text-light: #999999;
+    --border: #E8E0D8;
+    --shadow: 0 8px 32px rgba(255,107,0,0.12);
+    --radius: 16px;
+  }
+
+  /* === NAVBAR === */
+  #mainNav {
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    padding: 16px 0;
+    transition: padding 0.3s ease;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+  }
+  #mainNav.scrolled { padding: 8px 0; }
+  .navbar-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    color: var(--orange) !important;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo-icon {
+    width: 38px; height: 38px;
+    background: linear-gradient(135deg, var(--orange), var(--amber));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 800; font-size: 18px;
+    flex-shrink: 0;
+  }
+  .nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #333 !important;
+    padding: 8px 14px !important;
+    border-radius: 8px;
+    transition: all 0.2s;
+  }
+  .nav-link:hover, .nav-link.active { color: var(--orange) !important; }
+  .btn-nav-cta {
+    background: var(--orange);
+    color: white !important;
+    padding: 10px 22px !important;
+    border-radius: 50px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: all 0.3s;
+    border: none;
+  }
+  .btn-nav-cta:hover { background: #e05a00; transform: translateY(-1px); }
+  .navbar-toggler { border: 2px solid var(--orange); border-radius: 8px; }
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23FF6B00' stroke-width='2.5' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  /* === HERO SECTION === */
+  #hero {
+    background: var(--bg-cream);
+    padding: 120px 0 70px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  .pill-badge {
+    display: inline-block;
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    border-radius: 50px;
+    padding: 6px 18px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+    max-width: 100%;
+    word-break: break-word;
+  }
+  .hero-h1 {
+    font-size: clamp(2rem, 5vw, 3.6rem);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+  }
+  .hero-h1 .highlight {
+    background: linear-gradient(135deg, var(--orange), var(--amber));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    color: var(--text-mid);
+    margin-bottom: 32px;
+  }
+  .hero-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .btn-primary-cta {
+    background: var(--orange);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+  .btn-primary-cta:hover {
+    background: #e05a00;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255,107,0,0.35);
+  }
+  .btn-outline-cta {
+    background: transparent;
+    color: var(--orange);
+    border: 2px solid var(--orange);
+    padding: 12px 26px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+  .btn-outline-cta:hover {
+    background: var(--orange);
+    color: white;
+    transform: translateY(-2px);
+  }
+  .floating-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .tag-pill {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    animation: tagBob 3s ease-in-out infinite;
+  }
+  .tag-pill:nth-child(2) { animation-delay: 0.5s; }
+  .tag-pill:nth-child(3) { animation-delay: 1s; }
+  .tag-pill:nth-child(4) { animation-delay: 1.5s; }
+  @keyframes tagBob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  /* === AVATAR === */
+  .avatar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .avatar-circle {
+    position: relative;
+    display: inline-block;
+  }
+  .avatar-glow {
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    background: transparent;
+    border: 3px solid var(--orange);
+    animation: glowPulse 2s ease-in-out infinite;
+    z-index: 0;
+  }
+  @keyframes glowPulse {
+    0%, 100% { opacity: 0.4; transform: scale(1); box-shadow: 0 0 0 0 rgba(255,107,0,0.3); }
+    50% { opacity: 1; transform: scale(1.04); box-shadow: 0 0 20px 8px rgba(255,107,0,0.15); }
+  }
+  .avatar-svg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 1;
+    animation: avatarFloat 4s ease-in-out infinite;
+  }
+  @keyframes avatarFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .avatar-name-card {
+    background: white;
+    border-radius: 14px;
+    padding: 12px 24px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  .avatar-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--orange);
+  }
+  .avatar-title {
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    margin-top: 2px;
+  }
+
+  /* === VIDEO CARD === */
+  .video-card {
+    background: white;
+    border-radius: 16px;
+    padding: 14px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    max-width: 300px;
+    width: 100%;
+  }
+  .video-card:hover { transform: scale(1.02); box-shadow: 0 12px 40px rgba(255,107,0,0.2); }
+  .video-play-btn {
+    width: 50px; height: 50px;
+    background: linear-gradient(135deg, var(--orange), var(--amber));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1rem;
+    flex-shrink: 0;
+  }
+  .video-info .video-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-dark);
+  }
+  .video-info .video-sub {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    margin-top: 2px;
+  }
+
+  /* === STATS SECTION === */
+  #stats {
+    background: var(--bg-peach);
+    padding: 60px 0;
+  }
+  .stat-item { text-align: center; padding: 20px 10px; }
+  .stat-number {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: var(--orange);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  /* === SECTION HEADERS === */
+  .section-label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    line-height: 1.25;
+  }
+  .section-sub {
+    color: var(--text-mid);
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* === SERVICE CARDS === */
+  #services { background: white; padding: 80px 0; }
+  .service-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 28px 22px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    height: 100%;
+    transition: all 0.3s;
+    border-left: 4px solid transparent;
+    cursor: default;
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    border-left-color: var(--orange);
+    box-shadow: 0 16px 40px rgba(255,107,0,0.15);
+  }
+  .service-icon {
+    width: 56px; height: 56px;
+    background: var(--bg-peach);
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--orange);
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  .service-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+  .service-desc {
+    font-size: 0.87rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .service-link {
+    color: var(--orange);
+    font-weight: 600;
+    font-size: 0.87rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .service-link:hover { gap: 8px; color: #e05a00; }
+
+  /* === CTA BANNER === */
+  #cta-banner {
+    background: linear-gradient(135deg, var(--orange), var(--amber));
+    padding: 80px 20px;
+    text-align: center;
+  }
+  .cta-banner-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: white;
+    margin-bottom: 16px;
+  }
+  .cta-banner-sub {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.05rem;
+    margin-bottom: 32px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-white-cta {
+    background: white;
+    color: var(--orange);
+    border: none;
+    padding: 14px 32px;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-white-cta:hover {
+    color: var(--orange);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  }
+  .cta-trust {
+    margin-top: 16px;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.87rem;
+  }
+
+  /* === INDUSTRIES === */
+  #industries { background: var(--bg-cream); padding: 80px 0; }
+  .industry-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 22px 16px;
+    text-align: center;
+    border: 1px solid var(--border);
+    cursor: default;
+    transition: all 0.3s;
+    height: 100%;
+  }
+  .industry-card:hover {
+    background: var(--orange);
+    color: white;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(255,107,0,0.25);
+  }
+  .industry-emoji { font-size: 2rem; margin-bottom: 10px; display: block; }
+  .industry-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.87rem;
+    color: var(--text-dark);
+    transition: color 0.3s;
+  }
+  .industry-card:hover .industry-name { color: white; }
+
+  /* === FOUNDER === */
+  #founder { background: white; padding: 80px 0; }
+
+  /* === TESTIMONIALS === */
+  #testimonials { background: var(--bg-peach); padding: 80px 0; }
+  .testimonial-card {
+    background: white;
+    border-radius: var(--radius);
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+    height: 100%;
+  }
+  .stars { color: #FFC107; font-size: 1.1rem; margin-bottom: 12px; letter-spacing: 2px; }
+  .testimonial-quote {
+    color: var(--text-mid);
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
+  .testimonial-name {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+  }
+  .testimonial-role { font-size: 0.82rem; color: var(--text-mid); }
+
+  /* === FOOTER === */
+  footer {
+    background: #111111;
+    color: #ccc;
+    padding: 60px 0 0;
+  }
+  .footer-brand {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--orange);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .footer-desc { font-size: 0.9rem; line-height: 1.7; color: #999; margin-bottom: 20px; }
+  .social-icons { display: flex; gap: 12px; flex-wrap: wrap; }
+  .social-icon {
+    width: 38px; height: 38px;
+    background: #222;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #999;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    text-decoration: none;
+  }
+  .social-icon:hover { background: var(--orange); color: white; transform: translateY(-3px); }
+  .footer-heading {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: white;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--orange);
+    display: inline-block;
+  }
+  .footer-links { list-style: none; padding: 0; }
+  .footer-links li { margin-bottom: 10px; }
+  .footer-links a {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.88rem;
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .footer-links a::before { content: "›"; color: var(--orange); font-size: 1rem; }
+  .footer-links a:hover { color: var(--orange); }
+  .footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+    font-size: 0.88rem;
+    color: #999;
+  }
+  .footer-contact-icon {
+    color: var(--orange);
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+  .footer-bottom {
+    background: #000;
+    padding: 18px 0;
+    margin-top: 50px;
+  }
+  .footer-bottom-text { font-size: 0.82rem; color: #666; }
+  .footer-bottom a { color: #888; text-decoration: none; }
+  .footer-bottom a:hover { color: var(--orange); }
+
+  /* === RESPONSIVE FIXES === */
+  @media (max-width: 991px) {
+    #hero { padding: 100px 0 60px; min-height: auto; }
+    .avatar-wrapper { margin-top: 40px; }
+    .avatar-svg { width: 170px; height: 170px; }
+  }
+  @media (max-width: 767px) {
+    #hero { padding: 90px 0 50px; }
+    .hero-btns { flex-direction: column; align-items: flex-start; }
+    .btn-primary-cta, .btn-outline-cta { width: 100%; justify-content: center; }
+    .avatar-svg { width: 150px; height: 150px; }
+    .video-card { max-width: 100%; }
+    .floating-tags { gap: 8px; }
+    .tag-pill { font-size: 0.78rem; padding: 6px 12px; }
+    .stat-number { font-size: 2rem; }
+    .service-card { margin-bottom: 0; }
+    footer .col-md-6:not(:last-child) { margin-bottom: 36px; }
+  }
+  @media (max-width: 400px) {
+    .hero-h1 { font-size: 1.75rem; }
+    .navbar-brand { font-size: 1.1rem; }
+    .nav-logo-icon { width: 32px; height: 32px; font-size: 15px; }
+  }
+  </style>
+</head>
+<body>
+
+<nav id="mainNav">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center w-100">
+      <a class="navbar-brand" href="index.html">
+        <div class="nav-logo-icon">A</div>
+        Artha AI
+      </a>
+      <button class="navbar-toggler d-lg-none" type="button" id="navToggler">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="d-none d-lg-flex align-items-center gap-2" id="navMenu">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="services.html">Services</a>
+        <a class="nav-link" href="industries.html">Industries</a>
+        <a class="btn-nav-cta ms-2" href="https://sk234567890.pythonanywhere.com/view/ai-diagnostic.html?api_key=key_49bad78b43f9">
+          Take Free AI Test
+        </a>
+      </div>
+    </div>
+    <div class="d-lg-none" id="mobileMenu" style="display:none!important; padding-top:16px; border-top: 1px solid #eee; margin-top:12px;">
+      <a class="nav-link d-block py-2" href="index.html">Home</a>
+      <a class="nav-link d-block py-2" href="about.html">About</a>
+      <a class="nav-link d-block py-2" href="services.html">Services</a>
+      <a class="nav-link d-block py-2" href="industries.html">Industries</a>
+      <a class="btn-primary-cta d-block text-center mt-2 mb-2" href="https://sk234567890.pythonanywhere.com/view/ai-diagnostic.html?api_key=key_49bad78b43f9">Take Free AI Test</a>
+    </div>
+  </div>
+</nav>
+
+<section id="hero">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      
+      <div class="col-12 col-lg-6" data-aos="fade-right">
+        <div class="pill-badge">
+          AI Adoption for India's Professionals & SMEs
+        </div>
+        <h1 class="hero-h1">
+          Helping Professionals<br>
+          &amp; Small Businesses<br>
+          Enter <span class="highlight">the AI Age</span>
+        </h1>
+        <p class="hero-sub">
+          AI Websites • Automation • Chatbots • Digital Growth
+        </p>
+        <div class="hero-btns">
+          <a href="ai-diagnostic.html" class="btn-primary-cta">
+            Take Free AI Diagnostic Test →
+          </a>
+          <button class="btn-outline-cta" id="openVideoBtn">
+            ▶ Watch Intro Video
+          </button>
+        </div>
+        <div class="floating-tags">
+          <span class="tag-pill">🤖 AI Chatbots</span>
+          <span class="tag-pill">⚡ Automation</span>
+          <span class="tag-pill">📊 Lead Gen</span>
+          <span class="tag-pill">🌐 AI Websites</span>
+        </div>
+      </div>
+
+      <div class="col-12 col-lg-6" data-aos="fade-left">
+        <div class="avatar-wrapper">
+          <div class="avatar-circle">
+            <div class="avatar-glow"></div>
+            <svg class="avatar-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#FFB347"/>
+                  <stop offset="100%" stop-color="#FF6B00"/>
+                </radialGradient>
+                <pattern id="circuitPat" width="25" height="25" patternUnits="userSpaceOnUse">
+                  <path d="M5 0 L5 10 L15 10" stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none"/>
+                  <circle cx="5" cy="10" r="1.5" fill="rgba(255,255,255,0.18)"/>
+                  <path d="M15 10 L25 10" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
+                </pattern>
+                <clipPath id="circleClip">
+                  <circle cx="100" cy="100" r="98"/>
+                </clipPath>
+              </defs>
+              <circle cx="100" cy="100" r="100" fill="url(#bgGrad)"/>
+              <circle cx="100" cy="100" r="100" fill="url(#circuitPat)"/>
+              <ellipse cx="100" cy="165" rx="60" ry="45" fill="#1A1A2E" clip-path="url(#circleClip)"/>
+              <path d="M78 140 Q100 150 122 140 L118 124 Q100 134 82 124 Z" fill="white" clip-path="url(#circleClip)"/>
+              <path d="M97 136 L100 158 L103 136 L100 128 Z" fill="#FF6B00" clip-path="url(#circleClip)"/>
+              <rect x="91" y="116" width="18" height="16" rx="6" fill="#FDBCAA"/>
+              <ellipse cx="100" cy="94" rx="34" ry="38" fill="#FDBCAA"/>
+              <ellipse cx="100" cy="62" rx="36" ry="20" fill="#2C1810"/>
+              <ellipse cx="100" cy="69" rx="30" ry="14" fill="#2C1810"/>
+              <rect x="66" y="60" width="8" height="22" rx="4" fill="#2C1810"/>
+              <rect x="126" y="60" width="8" height="22" rx="4" fill="#2C1810"/>
+              <ellipse cx="66" cy="97" rx="7" ry="9" fill="#FDBCAA"/>
+              <ellipse cx="134" cy="97" rx="7" ry="9" fill="#FDBCAA"/>
+              <ellipse cx="66" cy="97" rx="4" ry="6" fill="#f0a898"/>
+              <ellipse cx="134" cy="97" rx="4" ry="6" fill="#f0a898"/>
+              <ellipse cx="88" cy="94" rx="7" ry="8" fill="white"/>
+              <ellipse cx="112" cy="94" rx="7" ry="8" fill="white"/>
+              <circle cx="89" cy="95" r="4" fill="#2C1810"/>
+              <circle cx="113" cy="95" r="4" fill="#2C1810"/>
+              <circle cx="90" cy="94" r="1.5" fill="white"/>
+              <circle cx="114" cy="94" r="1.5" fill="white"/>
+              <path d="M81 85 Q88 81 95 85" stroke="#2C1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M105 85 Q112 81 119 85" stroke="#2C1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <ellipse cx="100" cy="105" rx="4" ry="2.5" fill="#D4967A"/>
+              <path d="M96 104 Q100 109 104 104" stroke="#D4967A" stroke-width="1.5" fill="none"/>
+              <path d="M89 114 Q100 122 111 114" stroke="#C47A5A" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <ellipse cx="80" cy="108" rx="8" ry="5" fill="rgba(255,150,100,0.2)"/>
+              <ellipse cx="120" cy="108" rx="8" ry="5" fill="rgba(255,150,100,0.2)"/>
+              <rect x="84" y="152" width="32" height="16" rx="5" fill="#FF6B00" clip-path="url(#circleClip)"/>
+              <text x="100" y="163" text-anchor="middle" font-size="8" fill="white" font-family="Arial" font-weight="bold">
+                AI PRO
+              </text>
+            </svg>
+          </div>
+          <div class="avatar-name-card">
+            <div class="avatar-name">Ashutosh Khadria</div>
+            <div class="avatar-title">Founder & CEO, Artha AI</div>
+          </div>
+          <div class="video-card" id="videoCard">
+            <div class="video-play-btn">
+              <i class="fas fa-play"></i>
+            </div>
+            <div class="video-info">
+              <div class="video-title">Meet Ashutosh</div>
+              <div class="video-sub">Founder's Message (2:30)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="stats" data-aos="fade-up">
+  <div class="container">
+    <div class="row g-0">
+      <div class="col-6 col-md-3 stat-item">
+        <div class="stat-number" data-target="500">0</div>
+        <div class="stat-label">Businesses Helped</div>
+      </div>
+      <div class="col-6 col-md-3 stat-item">
+        <div class="stat-number" data-target="7">0</div>
+        <div class="stat-label">AI Services Offered</div>
+      </div>
+      <div class="col-6 col-md-3 stat-item">
+        <div class="stat-number" data-target="98">0</div>
+        <div class="stat-label">Client Satisfaction %</div>
+      </div>
+      <div class="col-6 col-md-3 stat-item">
+        <div class="stat-number" data-target="3">0</div>
+        <div class="stat-label">Years of AI Expertise</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-label">OUR SERVICES</div>
+      <h2 class="section-title">Simple, Practical AI Solutions</h2>
+      <p class="section-sub">
+        Artha AI helps SMEs adopt AI through simple, practical solutions — from AI-optimized websites to full automation.
+      </p>
+    </div>
+    <div class="row g-4">
+      
+      <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-globe"></i></div>
+          <h3 class="service-title">AI Ready Websites</h3>
+          <p class="service-desc">Modern AI-optimized websites for current and new businesses.</p>
+          <a href="services/ai-websites.html" class="service-link">Learn More &rarr;</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <h3 class="service-title">WhatsApp Integration</h3>
+          <p class="service-desc">Connect AI chatbots to WhatsApp for instant customer engagement.</p>
+          <a href="services/whatsapp.html" class="service-link">Learn More &rarr;</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 class="service-title">Lead Generation & Automation</h3>
+          <p class="service-desc">Automated lead capture and nurturing pipelines for your business.</p>
+          <a href="services/lead-gen.html" class="service-link">Learn More &rarr;</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-map-marker-alt"></i></div>
+          <h3 class="service-title">Digital Directories Listing</h3>
+          <p class="service-desc">Get found on Google, Justdial, IndiaMART and top directories.</p>
+          <a href="services/directories.html" class="service-link">Learn More &rarr;</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-bullhorn"></i></div>
+          <h3 class="service-title">Automate Digital Marketing</h3>
+          <p class="service-desc">AI-powered social media, email, and ad campaign automation.</p>
+          <a href="services/digital-marketing.html" class="service-link">Learn More &rarr;</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-comments"></i></div>
+          <h3 class="service-title">Communication Automation</h3>
+          <p class="service-desc">Automate WhatsApp, email, and SMS communications at scale.</p>
+          <a href="services/communication.html" class="service-link">Learn More &rarr;</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
+          <h3 class="service-title">AI Consulting</h3>
+          <p class="service-desc">Strategic AI roadmap and consulting tailored for your SME.</p>
+          <a href="services/consulting.html" class="service-link">Learn More &rarr;</a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-cogs"></i></div>
+          <h3 class="service-title">Business Process Automation</h3>
+          <p class="service-desc">Streamline operations with intelligent workflow automation.</p>
+          <a href="services/process-automation.html" class="service-link">Learn More &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="cta-banner" data-aos="fade-up">
+  <div class="container">
+    <h2 class="cta-banner-title">How AI Ready Are You?</h2>
+    <p class="cta-banner-sub">
+      Take our free 20-question AI Readiness Diagnostic Test and get your personalised AI Maturity Score instantly.
+    </p>
+    <a href="ai-diagnostic.html" class="btn-white-cta">
+      Take Free Diagnostic Test Today →
+    </a>
+    <p class="cta-trust">
+      ✅ Free &nbsp;|&nbsp; ⏱️ 2 Minutes &nbsp;|&nbsp; 
+      🔒 No Spam &nbsp;|&nbsp; 📧 PDF Report via Email
+    </p>
+  </div>
+</section>
+
+<section id="industries">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-label">INDUSTRIES</div>
+      <h2 class="section-title">Built for India's Growing Professionals</h2>
+    </div>
+    <div class="row g-3">
+      
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="0">
+        <div class="industry-card">
+          <span class="industry-emoji">🧾</span>
+          <div class="industry-name">Chartered Accountants</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="50">
+        <div class="industry-card">
+          <span class="industry-emoji">⚖️</span>
+          <div class="industry-name">Lawyers & Legal Firms</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+        <div class="industry-card">
+          <span class="industry-emoji">🏛️</span>
+          <div class="industry-name">Architecture Firms</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+        <div class="industry-card">
+          <span class="industry-emoji">🏠</span>
+          <div class="industry-name">Real Estate Brokers</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+        <div class="industry-card">
+          <span class="industry-emoji">🎓</span>
+          <div class="industry-name">Education & Coaching</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+        <div class="industry-card">
+          <span class="industry-emoji">🏥</span>
+          <div class="industry-name">Healthcare Clinics</div>
+        </div>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="0">
+        <div class="industry-card">
+          <span class="industry-emoji">🚗</span>
+          <div class="industry-name">Driving Schools</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="50">
+        <div class="industry-card">
+          <span class="industry-emoji">🧒</span>
+          <div class="industry-name">Playschools</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+        <div class="industry-card">
+          <span class="industry-emoji">💰</span>
+          <div class="industry-name">Insurance Agents</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+        <div class="industry-card">
+          <span class="industry-emoji">📊</span>
+          <div class="industry-name">Portfolio Managers</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+        <div class="industry-card">
+          <span class="industry-emoji">🚀</span>
+          <div class="industry-name">Solopreneurs</div>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+        <div class="industry-card">
+          <span class="industry-emoji">🏢</span>
+          <div class="industry-name">SMEs & Businesses</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="founder">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-12 col-lg-5 order-lg-2" data-aos="fade-left">
+        <div class="avatar-wrapper">
+          <div class="avatar-circle">
+            <div class="avatar-glow"></div>
+            <svg class="avatar-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <radialGradient id="bgGradFounder" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#FFB347"/>
+                  <stop offset="100%" stop-color="#FF6B00"/>
+                </radialGradient>
+                <pattern id="circuitPatFounder" width="25" height="25" patternUnits="userSpaceOnUse">
+                  <path d="M5 0 L5 10 L15 10" stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none"/>
+                  <circle cx="5" cy="10" r="1.5" fill="rgba(255,255,255,0.18)"/>
+                  <path d="M15 10 L25 10" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
+                </pattern>
+                <clipPath id="circleClipFounder">
+                  <circle cx="100" cy="100" r="98"/>
+                </clipPath>
+              </defs>
+              <circle cx="100" cy="100" r="100" fill="url(#bgGradFounder)"/>
+              <circle cx="100" cy="100" r="100" fill="url(#circuitPatFounder)"/>
+              <ellipse cx="100" cy="165" rx="60" ry="45" fill="#1A1A2E" clip-path="url(#circleClipFounder)"/>
+              <path d="M78 140 Q100 150 122 140 L118 124 Q100 134 82 124 Z" fill="white" clip-path="url(#circleClipFounder)"/>
+              <path d="M97 136 L100 158 L103 136 L100 128 Z" fill="#FF6B00" clip-path="url(#circleClipFounder)"/>
+              <rect x="91" y="116" width="18" height="16" rx="6" fill="#FDBCAA"/>
+              <ellipse cx="100" cy="94" rx="34" ry="38" fill="#FDBCAA"/>
+              <ellipse cx="100" cy="62" rx="36" ry="20" fill="#2C1810"/>
+              <ellipse cx="100" cy="69" rx="30" ry="14" fill="#2C1810"/>
+              <rect x="66" y="60" width="8" height="22" rx="4" fill="#2C1810"/>
+              <rect x="126" y="60" width="8" height="22" rx="4" fill="#2C1810"/>
+              <ellipse cx="66" cy="97" rx="7" ry="9" fill="#FDBCAA"/>
+              <ellipse cx="134" cy="97" rx="7" ry="9" fill="#FDBCAA"/>
+              <ellipse cx="66" cy="97" rx="4" ry="6" fill="#f0a898"/>
+              <ellipse cx="134" cy="97" rx="4" ry="6" fill="#f0a898"/>
+              <ellipse cx="88" cy="94" rx="7" ry="8" fill="white"/>
+              <ellipse cx="112" cy="94" rx="7" ry="8" fill="white"/>
+              <circle cx="89" cy="95" r="4" fill="#2C1810"/>
+              <circle cx="113" cy="95" r="4" fill="#2C1810"/>
+              <circle cx="90" cy="94" r="1.5" fill="white"/>
+              <circle cx="114" cy="94" r="1.5" fill="white"/>
+              <path d="M81 85 Q88 81 95 85" stroke="#2C1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M105 85 Q112 81 119 85" stroke="#2C1810" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <ellipse cx="100" cy="105" rx="4" ry="2.5" fill="#D4967A"/>
+              <path d="M96 104 Q100 109 104 104" stroke="#D4967A" stroke-width="1.5" fill="none"/>
+              <path d="M89 114 Q100 122 111 114" stroke="#C47A5A" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <ellipse cx="80" cy="108" rx="8" ry="5" fill="rgba(255,150,100,0.2)"/>
+              <ellipse cx="120" cy="108" rx="8" ry="5" fill="rgba(255,150,100,0.2)"/>
+              <rect x="84" y="152" width="32" height="16" rx="5" fill="#FF6B00" clip-path="url(#circleClipFounder)"/>
+              <text x="100" y="163" text-anchor="middle" font-size="8" fill="white" font-family="Arial" font-weight="bold">AI PRO</text>
+            </svg>
+          </div>
+          <div class="video-card" id="videoCardFounder">
+            <div class="video-play-btn">
+              <i class="fas fa-play"></i>
+            </div>
+            <div class="video-info">
+              <div class="video-title">Meet Ashutosh</div>
+              <div class="video-sub">Founder's Message (2:30)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-lg-7 order-lg-1" data-aos="fade-right">
+        <div class="section-label">MEET OUR FOUNDER</div>
+        <h2 class="section-title">Hi, I'm Ashutosh Khadria</h2>
+        <p style="color:var(--text-mid);line-height:1.8;margin-bottom:20px;">
+          I'm Ashutosh Khadria, founder of Artha AI and an Entrepreneur and AI adoption advocate. My mission is to make AI accessible and practical for every small business owner and professional in India. We help SMEs adopt AI tools to automate workflows, improve digital presence, and grow faster.
+        </p>
+        <ul class="list-unstyled mb-4">
+          <li class="mb-2">✅ Entrepreneur & AI Adoption Advocate</li>
+          <li class="mb-2">✅ Making AI Accessible for Small Businesses</li>
+          <li class="mb-2">✅ Helping SMEs Adopt AI Practically</li>
+        </ul>
+        <a href="about.html" class="btn-outline-cta mt-3">
+          Read Full Story →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <div class="section-label">TESTIMONIALS</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+    <div class="row g-4">
+      
+      <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="0">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">"Artha AI transformed how we handle client inquiries. Our WhatsApp bot now responds to 80% of queries automatically."</p>
+          <div class="testimonial-name">CA Ramesh Sharma</div>
+          <div class="testimonial-role">Mumbai</div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">"Our website now generates leads on autopilot. Best investment we made for our law firm's digital presence."</p>
+          <div class="testimonial-name">Advocate Priya Nair</div>
+          <div class="testimonial-role">Pune</div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-quote">"The AI diagnostic test was eye-opening. Artha AI helped us automate our entire appointment booking system."</p>
+          <div class="testimonial-name">Dr. Mehta</div>
+          <div class="testimonial-role">Healthcare Clinic, Bengaluru</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="footer-brand"><div class="nav-logo-icon">A</div> Artha AI</div>
+        <p class="footer-desc">Making AI accessible and practical for every small business owner and professional in India.</p>
+        <div class="social-icons">
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="ai-diagnostic.html">AI Diagnostic (Free)</a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4 class="footer-heading">Services</h4>
+        <ul class="footer-links">
+          <li><a href="services/ai-websites.html">AI Ready Websites</a></li>
+          <li><a href="services/lead-gen.html">Lead Generation</a></li>
+          <li><a href="services/directories.html">Digital Directories</a></li>
+          <li><a href="services/digital-marketing.html">Automate Marketing</a></li>
+          <li><a href="services/whatsapp.html">WhatsApp Integration</a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-3">
+        <h4 class="footer-heading">Contact Us</h4>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-phone footer-contact-icon"></i>
+          <span>+91 98765 43210</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-envelope footer-contact-icon"></i>
+          <span>hello@artha-ai.com</span>
+        </div>
+        <div class="footer-contact-item">
+          <i class="fa-solid fa-location-dot footer-contact-icon"></i>
+          <span>Bengaluru, Karnataka, India</span>
+        </div>
+        <a href="ai-diagnostic.html" class="btn-primary-cta" style="padding: 10px 20px; font-size: 0.85rem; margin-top: 10px;">
+          Book Free Consultation
+        </a>
+      </div>
+
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-4 footer-bottom-text">
+          © 2026 Artha AI. All Rights Reserved.
+        </div>
+        <div class="col-12 col-md-4 text-center footer-bottom-text">
+          <a href="#">Privacy Policy</a> | 
+          <a href="#">Terms of Service</a> | 
+          <a href="#">Sitemap</a>
+        </div>
+        <div class="col-12 col-md-4 text-end footer-bottom-text">
+          Made with ❤️ in India
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div id="videoModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.88); z-index:9999; align-items:center; justify-content:center;">
+  <div style="background:black; border-radius:16px; padding:20px; max-width:720px; width:90%; position:relative;">
+    <button id="closeModal" style="position:absolute; top:10px; right:14px; background:none; border:none; color:white; font-size:1.8rem; cursor:pointer;">✕</button>
+    <video id="introVideo" controls width="100%" style="border-radius:10px;" src="https://www.w3schools.com/html/mov_bbb.mp4"></video>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+  // Init AOS
+  AOS.init({ duration: 800, once: true, offset: 80 });
+
+  // Navbar scroll shrink
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList
+      .toggle('scrolled', window.scrollY > 50);
+  });
+
+  // Mobile menu toggle
+  document.getElementById('navToggler')
+    .addEventListener('click', () => {
+      const m = document.getElementById('mobileMenu');
+      m.style.display = 
+        m.style.display === 'none' || !m.style.display 
+          ? 'block' : 'none';
+  });
+
+  // Video modal open
+  ['openVideoBtn', 'videoCard', 'videoCardFounder'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.addEventListener('click', () => {
+        const modal = document.getElementById('videoModal');
+        modal.style.display = 'flex';
+        document.getElementById('introVideo').play();
+      });
+    }
+  });
+
+  // Video modal close
+  document.getElementById('closeModal').addEventListener('click', () => {
+    document.getElementById('videoModal').style.display = 'none';
+    document.getElementById('introVideo').pause();
+    document.getElementById('introVideo').currentTime = 0;
+  });
+
+  // Close modal on backdrop click
+  document.getElementById('videoModal').addEventListener('click', (e) => {
+    if (e.target.id === 'videoModal') {
+      document.getElementById('videoModal').style.display = 'none';
+      document.getElementById('introVideo').pause();
+    }
+  });
+
+  // Stats counter animation
+  const counters = document.querySelectorAll('.stat-number');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-target'));
+        const suffix = target >= 98 ? '%' : '+';
+        let count = 0;
+        const step = Math.ceil(target / 60);
+        const timer = setInterval(() => {
+          count = Math.min(count + step, target);
+          el.textContent = count + suffix;
+          if (count >= target) clearInterval(timer);
+        }, 30);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => observer.observe(c));
+</script>
+
+</body>
+</html>
